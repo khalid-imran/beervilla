@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  ApplicationAPI: 'https://api.punkapi.com'
 };
