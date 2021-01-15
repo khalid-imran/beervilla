@@ -1,0 +1,191 @@
+<!----------------->
+<!-----landing----->
+<div class="landing-wrapper">
+  <div class="width-50">
+    <div class="section-info">
+      <div class="bg-over1">
+        <img src="../../assets/image/svg1.png" alt="">
+      </div>
+      <div class="detail-section">
+        <div class="big-text">Lorem ipsum dolor <span>sit amet</span></div>
+        <div class="x-text">pellentesque duis dui blandit. Fames nibh et, est augue mollis nullam. Pharetra, pulvinar
+          molestie penatibus leo.
+        </div>
+        <div class="input-grp">
+          <input type="text" class="input-control" placeholder="Enter your email ">
+          <button class="btn-input">Get Early Access</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="width-50">
+    <section class="section-owl">
+      <div class="owl-carousel owl-theme" id="gallery">
+        <div class="photo">
+          <img src="../../assets/image/p1.png" alt="">
+        </div>
+        <div class="photo">
+          <img src="../../assets/image/p2.png" alt="">
+        </div>
+        <div class="photo">
+          <img src="../../assets/image/p3.png" alt="">
+        </div>
+      </div>
+    </section>
+    <div class="section-slider">
+      <div class="back-background">
+        <div class="bg-over2">
+          <img src="../../assets/image/svg2.png" alt="">
+        </div>
+        <div class="bg-over3">
+          <img src="../../assets/image/dotSvg.png" alt="">
+        </div>
+      </div>
+      <div class="photo-carosule">
+        <div class="line1" *ngIf="sliderPic === 1">
+          <div class="ig-1 position-active" [ngClass]="{ani1: showAni === 1, aniRevers3: showAniRevers === 1}" style="background-image: url('./assets/image/p1.png')"></div>
+          <div class="ig-2 position-past" [ngClass]="{ani2: showAni === 1, aniRevers1: showAniRevers === 1}" style="background-image: url('./assets/image/p2.png')"></div>
+          <div class="ig-3 position-will" [ngClass]="{ani3: showAni === 1, aniRevers2: showAniRevers === 1}" style="background-image: url('./assets/image/p3.png')"></div>
+        </div>
+        <div class="line2" *ngIf="sliderPic === 2">
+          <div class="ig-1 position-active" [ngClass]="{ani1: showAni === 2, aniRevers3: showAniRevers === 2}" style="background-image: url('./assets/image/p3.png')"></div>
+          <div class="ig-2 position-past" [ngClass]="{ani2: showAni === 2, aniRevers1: showAniRevers === 2}" style="background-image: url('./assets/image/p1.png')"></div>
+          <div class="ig-3 position-will" [ngClass]="{ani3: showAni === 2, aniRevers2: showAniRevers === 2}" style="background-image: url('./assets/image/p2.png')"></div>
+        </div>
+        <div class="line3" *ngIf="sliderPic === 3">
+          <div class="ig-1 position-active" [ngClass]="{ani1: showAni === 3, aniRevers3: showAniRevers === 3}" style="background-image: url('./assets/image/p2.png')"></div>
+          <div class="ig-2 position-past" [ngClass]="{ani2: showAni === 3, aniRevers1: showAniRevers === 3}" style="background-image: url('./assets/image/p3.png')"></div>
+          <div class="ig-3 position-will" [ngClass]="{ani3: showAni === 3, aniRevers2: showAniRevers === 3}" style="background-image: url('./assets/image/p1.png')"></div>
+        </div>
+        <div class="grp-btn">
+          <button class="btn-do" *ngIf="disablePrevBtn === 0" (click)="prev()"><img src="./assets/image/arrow.png" alt=""></button>
+          <button class="btn-do active" *ngIf="disablePrevBtn === 1" ><img src="./assets/image/arrow.png" alt=""></button>
+          <button class="btn-do next" *ngIf="disableNextBtn === 0" (click)="next()"> <img src="./assets/image/arrow.png" alt=""> </button>
+          <button class="btn-do next active" *ngIf="disableNextBtn === 1" > <img src="./assets/image/arrow.png" alt=""> </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----landing end---->
+<!--------------------->
+
+<!----------------->
+<!-----products---->
+<section class="section-product">
+  <div class="title-text">Products</div>
+  <div class="container" *ngIf="beerData.length === 0">
+     <span class="loadingBarAsh" *ngFor="let l of [].constructor(9)">
+       <span class="_30"></span>
+       <span class="_50"></span>
+       <span class="_100"></span>
+     </span>
+  </div>
+  <div class="container" *ngIf="beerData.length > 0">
+    <div class="product-wrapper">
+      <a href="javascript:void(0)" (click)="openModal(each)" class="each-product"
+         *ngFor="let each of beerData; let index = index;">
+        <div class="product-photo">
+          <span class="product-overlay"></span>
+          <img src="{{each.image_url}}" alt="">
+        </div>
+        <div class="title-section">
+          <div class="title">{{each.name}}</div>
+          <div class="price">{{each.tagline}} </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-----products end---->
+<!--------------------->
+
+
+<!--------------->
+<!-----banner---->
+<section class="section-banner">
+  <div class="container">
+    <div class="banner" style="background-image: url('./assets/image/banner.png')">
+      <div class="text-title">There's something for everyone!</div>
+      <div class="text-sub">15% OFF YOUR FIRST 3 ORDER</div>
+    </div>
+  </div>
+</section>
+<!-----banner end---->
+<!------------------->
+
+
+<!--------------->
+<!--user review-->
+<section class="section-review">
+  <h4 class="title-text">Review</h4>
+  <div class="owl-carousel owl-theme" id="review-gallery">
+    <div class="review-box">
+      <div class="avatar">
+        <img src="../../assets/image/u1.jpg" alt="">
+      </div>
+      <div class="r-name">Shahidul Islam</div>
+      <div class="r-text">“AMAZING test with quality products”</div>
+    </div>
+    <div class="review-box">
+      <div class="avatar">
+        <img src="../../assets/image/u2.jpg" alt="">
+      </div>
+      <div class="r-name">Kabir Shahin</div>
+      <div class="r-text">“AMAZING test with quality products”</div>
+    </div>
+    <div class="review-box">
+      <div class="avatar">
+        <img src="../../assets/image/u3.jpg" alt="">
+      </div>
+      <div class="r-name">Farzana Islam</div>
+      <div class="r-text">“AMAZING test with quality products”</div>
+    </div>
+  </div>
+</section>
+<!--user review end-->
+<!------------------->
+
+
+<!--product detail-->
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body" *ngIf="single != null">
+        <div class="content-wrapper">
+          <div class="left-section">
+            <div class="product-photo">
+              <img src="{{single.image_url}}" alt="">
+            </div>
+            <div class="title-section">
+              <div class="title">{{single.name}}</div>
+              <div class="price">{{single.tagline}} </div>
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="detail-wrapper">
+              <div class="title-text">Details:</div>
+              <div class="details">{{single.description}}</div>
+              <br>
+              <div class="title-text">Pairing food:</div>
+              <ol class="details" *ngIf="single.food_pairing.length > 0">
+                <li *ngFor="let each of single.food_pairing">{{each}}</li>
+              </ol>
+              <br>
+              <div class="title-text">Brewer Tips:</div>
+              <div class="details">{{single.brewers_tips}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>

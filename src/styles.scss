@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./style/variable";
+body{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-component{
+  width: 100%;
+}
+
+/*Grid system*/
+.container{
+  width: 1440px;
+  display: block;
+  margin: auto;
+  @media screen and (max-width: 1440px) {
+    width: auto;
+    padding: 0 50px;
+  }
+  @media screen and (max-width: 1366px) {
+    width: 1200px;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.width-100{
+  width: 100%;
+  display: block;
+}
+.width-50{
+  width: 50%;
+  display: block;
+  float: left;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    float: none;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: $base;
+  // Fade for backdrop
+  &.fade {
+    opacity: 0; }
+  &.in {
+    opacity: .5; }
+}
